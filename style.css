@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    height: 450px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+header,
+.compose {
+    display: flex;
+    padding: 1rem;
+
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: rgb(168, 168, 168);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    opacity: 80%;
+    top: 10px;
+}
+
+.bx-menu:hover+.tooltiptext {
+    visibility: visible;
+}
+
+.bx-menu {
+    font-size: 2rem;
+    padding: 6px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.mail-icon {
+    font-size: 2rem;
+    padding-left: 2rem;
+    margin-top: -5px;
+}
+
+.bx-pencil {
+    padding: 0;
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.compose {
+    color: black;
+    background-color: rgb(191, 240, 255);
+    border-radius: 20px;
+    width: 180px;
+    justify-content: center;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+.compose:hover {
+    color: rgb(44, 44, 44);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+}

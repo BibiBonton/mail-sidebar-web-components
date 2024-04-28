@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="js.js" defer></script>
+    <title>Gmail Sidebar</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <span class='bx bx-menu'></span>
+            <span class="tooltiptext">Main menu</span>
+        </div>
+        <span class="mail-icon">📬</span>
+        <h1>Mail App</h1>
+    </header>
+    <a href="#" class="compose">
+        <span class='bx bx-pencil'></span>
+        <h2>Compose</h2>
+    </a>
+
+
+    <mail-app>
+        <a href="#" data-text="Inbox" data-unreadCount="0" data-selected="true">
+            <slot slot="icon">📥 <span>Inbox</span></slot>
+        </a>
+        <a href="#" data-text="Starred" data-unreadCount="0" data-selected="false">
+            <slot slot="icon">⭐️ <span>Starred</span></slot>
+        </a>
+        <a href="#" data-text="Snoozed" data-unreadCount="0" data-selected="false">
+            <slot slot="icon">⏱ <span>Snoozed</span></slot>
+        </a>
+        <a href="#" data-text="Sent" data-unreadCount="0" data-selected="false">
+            <slot slot="icon">➡️ <span>Sent</span></slot>
+        </a>
+        <a href="#" data-text="Draft" data-unreadCount="1" data-selected="false">
+            <slot slot="icon">📄 <span>Draft</span></slot>
+        </a>
+    </mail-app>
+
+
+
+    <template id="mail-app-template">
+        <div>
+            <slot></slot>
+        </div>
+
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            slot {
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: column;
+            }
+
+            ::slotted(a) {
+                text-decoration: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                transition: background-color 0.4s ease;
+                padding: 0.5rem !important;
+            }
+
+            ::slotted(a:hover) {
+                background-color: rgb(214, 214, 214);
+            }
+        </style>
+
+    </template>
+</body>
+
+</html>
